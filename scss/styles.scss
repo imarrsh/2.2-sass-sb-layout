@@ -1,8 +1,7 @@
 // overide bootstrap variables here
 // #############
 $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/" !default;
-
-
+$grid-gutter-width: 20px !default;
 
 // #############
 // IMPORTS
@@ -14,20 +13,80 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/" !d
 
 
 // COLORS
+$powell-red : #B12531;
 
+// MIXINS //
 
-// MAIN STYLES
-header,
-section,
-footer {
-  max-width: 1024px;
+// adds a transparent border on the bottom of an element
+@mixin white-shadow {
+  box-shadow: 0 4px 0 rgba(255, 255, 255, 0.5);
+  &:hover {
+    box-shadow: 0 4px 0 rgba(255, 255, 255, 1);
+  }
 }
 
+// MAIN STYLES
+
 .wrapper {
+  height: 1000px; // set faux height
+  position: relative;
   background: {
-    image: url('../images/bg.jpg');
+    image: url('../images/bg-min.jpg');
+    color: rgba(0,0,0, 0.8);
     repeat: no-repeat;
     size: cover;
     position: top center;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    background-color: rgba(0,0,0, 0.6);
+  }
+}
+
+header {
+  h6 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+  nav{
+    a {
+      background-color: $powell-red;
+      display: inline-block;
+    }
+  }
+}
+
+.social-icons {
+  span {
+    font: {
+      size: 36px;
+    }
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    line-height: 60px;
+    width: 60px;
+    height: 60px;
+    @include white-shadow;
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+  .fa-facebook {
+    background: #475795;
+  }
+  .fa-rss {
+    background: #CA903E;
+  }
+  .fa-twitter {
+    background: #6D8CC4;
+  }
+  .fa-youtube {
+    background: #B03531;
   }
 }

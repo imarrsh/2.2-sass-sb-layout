@@ -1,8 +1,33 @@
-// overide bootstrap variables
+// overide bootstrap variables here
+// #############
+$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/" !default;
 
 
 
+// #############
 // IMPORTS
+// #############
+// bootstrap stylesheets
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+// bootstrap glyphicons
+
+
 
 // COLORS
+
+
+// MAIN STYLES
+header,
+section,
+footer {
+  max-width: 1024px;
+}
+
+.wrapper {
+  background: {
+    image: url('../images/bg.jpg');
+    repeat: no-repeat;
+    size: cover;
+    position: top center;
+  }
+}

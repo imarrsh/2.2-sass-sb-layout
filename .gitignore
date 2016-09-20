@@ -9,7 +9,7 @@ ehthumbs.db
 Thumbs.db
 
 # sass stuff #
-.sass-cache
+.sass-cache/
 
 # project files #
 

@@ -5827,9 +5827,22 @@ header h6 {
   color: #fff;
   text-transform: uppercase;
   font-weight: normal; }
-header nav a {
-  background-color: #B12531;
-  display: inline-block; }
+
+nav {
+  color: #ffffff; }
+  nav a {
+    color: #ffffff;
+    background-color: #B12531;
+    display: block;
+    float: left;
+    width: 25%;
+    box-shadow: 0 4px 0 rgba(255, 255, 255, 0.5); }
+    nav a:hover {
+      box-shadow: 0 4px 0 white; }
+  navbefore {
+    content: "-"; }
+  nav:after {
+    content: "-"; }
 
 .social-icons span {
   font-size: 36px;

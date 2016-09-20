@@ -27,6 +27,7 @@ $powell-red : #B12531;
 
 // MAIN STYLES
 
+// page container & overlay
 .wrapper {
   height: 1000px; // set faux height
   position: relative;
@@ -54,11 +55,24 @@ header {
     text-transform: uppercase;
     font-weight: normal;
   }
-  nav{
-    a {
-      background-color: $powell-red;
-      display: inline-block;
-    }
+
+}
+
+nav{
+  color: #ffffff;
+  a {
+    color: #ffffff;
+    background-color: $powell-red;
+    display: block;
+    float: left;
+    width: 25%;
+    @include white-shadow;
+  }
+  &before{
+    content: "-";
+  }
+  &:after {
+    content: "-";
   }
 }
 

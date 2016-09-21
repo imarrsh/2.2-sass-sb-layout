@@ -1,7 +1,7 @@
 // overide bootstrap variables here
 // #############
 $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/" !default;
-$grid-gutter-width: 10px !default;
+$grid-gutter-width: 20px !default;
 
 // #############
 // IMPORTS
@@ -11,14 +11,19 @@ $grid-gutter-width: 10px !default;
 // bootstrap glyphicons
 
 
-
+// #############
 // COLORS
+// #############
 $powell-red: #B12531;
 
+// #############
 // FONTS
+// #############
 $font-stack: 'Open Sans', 'Helvetica', sans-serif;
 
+// #############
 // MIXINS //
+// #############
 
 // adds a transparent border on the bottom of an element
 @mixin white-shadow {
@@ -28,10 +33,26 @@ $font-stack: 'Open Sans', 'Helvetica', sans-serif;
   }
 }
 
+// shorthand for absolute positing - https://css-tricks.com/snippets/sass/mixin-offset-positioning/
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+// #############
 // MAIN STYLES
+// #############
 body {
   font-family: $font-stack;
 }
+
 // page container & overlay
 .wrapper {
   height: 1000px; // set faux height
@@ -56,12 +77,46 @@ body {
 
 header {
   margin-top: 10px;
-  h6 {
+}
+
+.social-links {
+  float: right;
+  display: inline-block;
+  h5 {
+    float: left;
     color: #fff;
     text-transform: uppercase;
     font-weight: 100;
   }
-
+  span {
+    font: {
+      size: 36px;
+    }
+    margin-left: 10px;
+    float: left;
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    line-height: 60px;
+    width: 60px;
+    height: 60px;
+    @include white-shadow;
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+  .fa-facebook {
+    background: #475795;
+  }
+  .fa-rss {
+    background: #CA903E;
+  }
+  .fa-twitter {
+    background: #6D8CC4;
+  }
+  .fa-youtube {
+    background: #B03531;
+  }
 }
 
 nav{
@@ -89,31 +144,54 @@ nav{
   }
 }
 
-.social-icons {
-  span {
-    font: {
-      size: 36px;
-    }
-    color: rgba(255, 255, 255, 0.5);
-    text-align: center;
-    line-height: 60px;
-    width: 60px;
-    height: 60px;
+#slider {
+  margin-top: 20px;
+  .slider-container {
+    background-color: transparentize(#fff, 0.1);
+    padding: 10px;
     @include white-shadow;
-    &:hover {
-      color: rgba(255, 255, 255, 1);
+  }
+  .slider-img{
+    position: relative;
+    height: 337px;
+    background: {
+      image: url('../images/top-image.png');
+      size: 135%;
+      position: 30% 26%;
+      repeat: no-repeat;
+    }
+    &:after {
+      content: "";
+      @include position(absolute, 0, 0, 0, 0);
+      background-image: url('../images/grid.png');
+      opacity: 0.5;
+    }
+    img{
+      position: absolute;
+      top: 50px;
+      left: 20px;
+      z-index: 10;
     }
   }
-  .fa-facebook {
-    background: #475795;
+}
+
+#skate-news {
+  margin: {
+    top: 20px
   }
-  .fa-rss {
-    background: #CA903E;
+  ul {
+    list-style: none;
+    margin: 0;
   }
-  .fa-twitter {
-    background: #6D8CC4;
+  li {
+    margin: 0;
   }
-  .fa-youtube {
-    background: #B03531;
+  h2 {
+    font-size: 26px;
+    margin: 0;
+  }
+  .post {
+    background: transparentize(#fff, .1);
+    padding: 28px;
   }
 }

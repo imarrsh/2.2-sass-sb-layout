@@ -1,61 +1,34 @@
 // overide bootstrap variables here
 // #############
 $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/" !default;
-$grid-gutter-width: 20px !default;
+$grid-gutter-width: 10px !default;
 
-// #############
+
+// ##########################
 // IMPORTS
-// #############
+// ##########################
 // bootstrap stylesheets
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-// bootstrap glyphicons
+
+// my mixins
+@import "variables";
+@import "mixins";
 
 
-// #############
-// COLORS
-// #############
-$powell-red: #B12531;
-
-// #############
-// FONTS
-// #############
-$font-stack: 'Open Sans', 'Helvetica', sans-serif;
-
-// #############
-// MIXINS //
-// #############
-
-// adds a transparent border on the bottom of an element
-@mixin white-shadow {
-  box-shadow: 0 4px 0 rgba(255, 255, 255, 0.5);
-  &:hover {
-    box-shadow: 0 4px 0 rgba(255, 255, 255, 1);
-  }
-}
-
-// shorthand for absolute positing - https://css-tricks.com/snippets/sass/mixin-offset-positioning/
-@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
-  position: $position;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-}
-
-@mixin absolute($args...) {
-  @include position(absolute, $args...);
-}
-
-// #############
-// MAIN STYLES
-// #############
+// ##########################
+// BASE STYLES
+// ##########################
 body {
   font-family: $font-stack;
 }
 
+// ##########################
+// PAGE WRAPPER STYLES
+// ##########################
+
 // page container & overlay
 .wrapper {
-  height: 1000px; // set faux height
+  padding-bottom: 100px;
   position: relative;
   background: {
     image: url('../images/bg-min.jpg');
@@ -74,6 +47,10 @@ body {
     background-color: rgba(0,0,0, 0.6);
   }
 }
+
+// ##########################
+// HEADER & NAV STYLES
+// ##########################
 
 header {
   margin-top: 10px;
@@ -123,6 +100,7 @@ nav{
   margin-top: 20px;
   color: #ffffff;
   a {
+    display: block;
     font-size: 16px;
     background-color: $powell-red;
     text-align: center;
@@ -143,6 +121,10 @@ nav{
     }
   }
 }
+
+// ##########################
+// IMAGE SLIDER SECTION
+// ##########################
 
 #slider {
   margin-top: 20px;
@@ -175,13 +157,16 @@ nav{
   }
 }
 
+// ##########################
+// SKATE ARTICLES
+// ##########################
+
 #skate-news {
   margin: {
-    top: 20px
+    top: 24px
   }
   ul {
     list-style: none;
-    margin: 0;
     padding-left: 0;
   }
   li {
@@ -210,5 +195,55 @@ nav{
       margin-left: 5px;
 
     }
+  }
+}
+
+// ##########################
+// SKATER LINKS COLLAGE
+// ##########################
+
+#skateboarders {
+  margin-top: 14px;
+  .skater-box {
+    margin-top: 10px;
+    background: transparentize(#fff, .1);
+    padding: 5px;
+    @include white-shadow();
+  }
+  .skater-img {
+    height: 222px; // 464px for taller
+    background-repeat: no-repeat;
+  }
+  h2 {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font: {
+      weight: 800;
+      size: 50px;
+    }
+    line-height: 1;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .skater-img-tall {
+    @extend .skater-img;
+    height: 464px;
+  }
+  #lance {
+    background-image: url('../images/sk8er-4.png');
+  }
+  #rodney{
+    background-image: url('../images/sk8er-3.png');
+  }
+  #steve{
+    background-image: url('../images/sk8er-1.png');
+  }
+  #tommy{
+    background-image: url('../images/sk8er-2.png');
+
   }
 }

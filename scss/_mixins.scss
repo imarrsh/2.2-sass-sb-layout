@@ -1,0 +1,24 @@
+// #############
+// MIXINS //
+// #############
+
+// adds a transparent border on the bottom of an element
+@mixin white-shadow() {
+  box-shadow: 0 4px 0 rgba(255, 255, 255, 0.5);
+  &:hover {
+    box-shadow: 0 4px 0 rgba(255, 255, 255, 1);
+  }
+}
+
+// shorthand for absolute positing - https://css-tricks.com/snippets/sass/mixin-offset-positioning/
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}

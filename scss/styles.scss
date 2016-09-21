@@ -1,7 +1,7 @@
 // overide bootstrap variables here
 // #############
 $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/" !default;
-$grid-gutter-width: 20px !default;
+$grid-gutter-width: 10px !default;
 
 // #############
 // IMPORTS
@@ -13,7 +13,10 @@ $grid-gutter-width: 20px !default;
 
 
 // COLORS
-$powell-red : #B12531;
+$powell-red: #B12531;
+
+// FONTS
+$font-stack: 'Open Sans', 'Helvetica', sans-serif;
 
 // MIXINS //
 
@@ -26,7 +29,9 @@ $powell-red : #B12531;
 }
 
 // MAIN STYLES
-
+body {
+  font-family: $font-stack;
+}
 // page container & overlay
 .wrapper {
   height: 1000px; // set faux height
@@ -50,29 +55,37 @@ $powell-red : #B12531;
 }
 
 header {
+  margin-top: 10px;
   h6 {
     color: #fff;
     text-transform: uppercase;
-    font-weight: normal;
+    font-weight: 100;
   }
 
 }
 
 nav{
+  margin-top: 20px;
   color: #ffffff;
   a {
-    color: #ffffff;
+    font-size: 16px;
     background-color: $powell-red;
-    display: block;
-    float: left;
-    width: 25%;
+    text-align: center;
+    color: #ffffff;
+    height: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
     @include white-shadow;
-  }
-  &before{
-    content: "-";
-  }
-  &:after {
-    content: "-";
+    &:before,
+    &:after {
+      content: "\2212";
+      margin: 0 10px;
+    }
+    &:hover {
+      background-color: lighten($powell-red, 10%);
+      color: #ffffff;
+      text-decoration: none;
+    }
   }
 }
 

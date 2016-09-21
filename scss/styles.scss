@@ -213,6 +213,12 @@ nav{
   .skater-img {
     height: 222px; // 464px for taller
     background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .skater-img-tall {
+    @extend .skater-img;
+    height: 464px;
   }
   h2 {
     color: white;
@@ -229,10 +235,6 @@ nav{
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .skater-img-tall {
-    @extend .skater-img;
-    height: 464px;
-  }
   #lance {
     background-image: url('../images/sk8er-4.png');
   }
@@ -244,6 +246,42 @@ nav{
   }
   #tommy{
     background-image: url('../images/sk8er-2.png');
+
+  }
+}
+
+// set up some math for board layout, maybe use, maybe not
+$boards: 10;
+$board-width: 260px;
+$board-margin: ($board-width / $boards);
+
+#products {
+  margin-top: 14px;
+  .decks {
+    padding: 8px 30px 20px;
+    background-color: #fff;
+    @include white-shadow;
+  }
+  img {
+    margin-right: 4.3125%;
+    &:last-child {
+      margin-right: 0;
+    }
+    @media (max-width: 602px) {
+      margin-right: 0;
+      transform: rotate(0.25turn);
+    }
+  }
+}
+
+#contact {
+  .contact-wrapper {
+    background-color: transparentize(#fff, 0.05);
+  }
+  .contact-card{
+
+  }
+  .contact-form {
 
   }
 }

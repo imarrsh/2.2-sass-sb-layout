@@ -5953,7 +5953,11 @@ nav {
       box-shadow: 0 4px 0 white; }
   #skateboarders .skater-img, #skateboarders .skater-img-tall {
     height: 222px;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; }
+  #skateboarders .skater-img-tall {
+    height: 464px; }
   #skateboarders h2 {
     color: white;
     text-align: center;
@@ -5966,8 +5970,6 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
-  #skateboarders .skater-img-tall {
-    height: 464px; }
   #skateboarders #lance {
     background-image: url("../images/sk8er-4.png"); }
   #skateboarders #rodney {
@@ -5976,5 +5978,25 @@ nav {
     background-image: url("../images/sk8er-1.png"); }
   #skateboarders #tommy {
     background-image: url("../images/sk8er-2.png"); }
+
+#products {
+  margin-top: 14px; }
+  #products .decks {
+    padding: 8px 30px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 0 rgba(255, 255, 255, 0.5); }
+    #products .decks:hover {
+      box-shadow: 0 4px 0 white; }
+  #products img {
+    margin-right: 4.3125%; }
+    #products img:last-child {
+      margin-right: 0; }
+    @media (max-width: 602px) {
+      #products img {
+        margin-right: 0;
+        transform: rotate(0.25turn); } }
+
+#contact .contact-wrapper {
+  background-color: rgba(255, 255, 255, 0.95); }
 
 /*# sourceMappingURL=styles.css.map */

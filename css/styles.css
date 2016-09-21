@@ -5917,7 +5917,8 @@ nav {
   margin-top: 20px; }
   #skate-news ul {
     list-style: none;
-    margin: 0; }
+    margin: 0;
+    padding-left: 0; }
   #skate-news li {
     margin: 0; }
   #skate-news h2 {
@@ -5925,6 +5926,20 @@ nav {
     margin: 0; }
   #skate-news .post {
     background: rgba(255, 255, 255, 0.9);
-    padding: 28px; }
+    padding: 28px;
+    box-shadow: 0 4px 0 rgba(255, 255, 255, 0.5); }
+    #skate-news .post:hover {
+      box-shadow: 0 4px 0 white; }
+  #skate-news a {
+    color: #B12531;
+    display: block;
+    font-weight: bold;
+    text-align: center; }
+    #skate-news a:before {
+      content: "[";
+      margin-right: 5px; }
+    #skate-news a:after {
+      content: "]";
+      margin-left: 5px; }
 
 /*# sourceMappingURL=styles.css.map */

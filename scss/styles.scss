@@ -198,6 +198,17 @@ nav{
 // SKATER LINKS COLLAGE
 // ##########################
 
+@mixin skater-zoom($size){
+  $hover-zoom: 1.2;
+  background-size: $size;
+  transition: background-size 200ms ease-in-out;
+  &:hover {
+    background-size: $size * $hover-zoom;
+  }
+}
+
+// $default-zoom: 100%;
+
 #skateboarders {
   margin-top: 14px;
   .skater-box {
@@ -208,8 +219,11 @@ nav{
   }
   .skater-img {
     height: 222px; // 464px for taller
-    background-repeat: no-repeat;
-    background-size: cover;
+    background : {
+      repeat: no-repeat;
+
+      position: center center;
+    }
     position: relative;
   }
   .skater-img-tall {
@@ -233,18 +247,26 @@ nav{
   }
   #lance {
     background-image: url('../images/sk8er-4.png');
+    @include skater-zoom(120%);
   }
   #rodney{
     background-image: url('../images/sk8er-3.png');
+    @include skater-zoom(120%);
   }
   #steve{
     background-image: url('../images/sk8er-1.png');
+    @include skater-zoom(120%);
   }
   #tommy{
     background-image: url('../images/sk8er-2.png');
-
+    @include skater-zoom(250%);
+    background-position: 70% center;
   }
 }
+
+// ##########################
+// PRODUCTS/BOARDS
+// ##########################
 
 // set up some math for board layout, maybe use, maybe not
 $boards: 10;
@@ -270,11 +292,16 @@ $board-margin: ($board-width / $boards);
   }
 }
 
+// ##########################
+// CONTACT AREA
+// ##########################
+
 #contact {
   margin-top: 14px;
   .contact-wrapper {
-    background-color: #ffffff;
+    background-color: transparentize(#fff, 0.02);
     position: relative;
+    @include white-shadow;
   }
   h3 {
     margin-top: 0;
@@ -294,7 +321,7 @@ $board-margin: ($board-width / $boards);
       text-transform: uppercase;
       font-size: 14px;
       padding: 10px;
-      border-color: #949494;
+      border: 1px solid #949494;
       margin-bottom: 17px;
     }
     input[type="submit"] {

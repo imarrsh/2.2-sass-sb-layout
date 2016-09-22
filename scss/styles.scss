@@ -158,6 +158,9 @@ nav{
 
 #slider {
   margin-top: 20px;
+  @media (max-width: 768px) {
+    margin-top: 0;
+  }
   .slider-container {
     background-color: transparentize(#fff, 0.1);
     padding: 10px;
@@ -171,6 +174,9 @@ nav{
       size: 135%;
       position: 30% 26%;
       repeat: no-repeat;
+    }
+    @media (max-width: 768px) {
+      height: 50vw;
     }
     &:after {
       content: "";
@@ -231,12 +237,20 @@ nav{
     @media (max-width: 922px){
       margin-top: 14px;
     }
+    transition: all 200ms ease-in-out;
+    &:hover{
+      background: #fff;
+      a {
+        transform: scale(1.2);
+      }
+    }
   }
   a {
     color : $powell-red;
     display: block;
     font-weight: bold;
     text-align: center;
+    transition: all 200ms ease-in-out;
     &:before {
       content: "[";
       margin-right: 5px;
@@ -264,11 +278,33 @@ nav{
 
 #skateboarders {
   margin-top: 14px;
+  position: relative;
   .skater-box {
     margin-top: 10px;
     background: transparentize(#fff, .1);
     padding: 5px;
     @include white-shadow();
+  }
+  .pointer {
+    position: absolute;
+    top: 30px;
+    left: -200px;
+    background-color: $powell-red;
+    color: #fff;
+    padding: 30px 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    &:after {
+      content: "";
+      border: 41px solid transparent;
+      border-left-color: $powell-red;
+      position: absolute;
+      right: -82px;
+      top: 0;
+    }
+    @media (max-width: 1300px){
+      display: none;
+    }
   }
   .skater-img {
     height: 222px; // 464px for taller
@@ -277,6 +313,15 @@ nav{
       position: center center;
     }
     position: relative;
+    @media (max-width: 450px){
+      background-size: cover !important;
+    }
+    &:hover h2 {
+      font-size: 55px;
+      @media (max-width: 1200px) {
+        font-size: 40px;
+      }
+    }
   }
   .skater-img-tall {
     @extend .skater-img;
@@ -299,6 +344,10 @@ nav{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: all 200ms ease-in-out 100ms;
+    @media (max-width: 1200px){
+      font-size: 35px;
+    }
   }
   #lance {
     background-image: url('../images/sk8er-4.png');
@@ -348,14 +397,17 @@ $board-margin: ($board-width / $boards);
     @include white-shadow;
   }
   img {
+    display: inline-block;
     margin-right: 4.3125%;
     &:last-child {
       margin-right: 0;
     }
-    @media (max-width: 602px) {
-      display: block;
-      margin-right: 0;
-      transform: rotate(-0.25turn) translateY(50%);
+    @media (max-width: 600px) {
+      &:not(:first-child){
+        display: none;
+      }
+      transform: rotate(90deg) translateY(-50%);
+      width: 20%;
     }
   }
 }
@@ -399,6 +451,9 @@ $board-margin: ($board-width / $boards);
       float: right;
       box-shadow: none;
       border: none;
+      &:hover {
+        background-color: lighten($powell-red, 10%);
+      }
       @media (max-width: 992px){
         width: 100%;
       }

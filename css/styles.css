@@ -5917,6 +5917,9 @@ nav {
 
 #slider {
   margin-top: 20px; }
+  @media (max-width: 768px) {
+    #slider {
+      margin-top: 0; } }
   #slider .slider-container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 10px;
@@ -5930,6 +5933,9 @@ nav {
     background-size: 135%;
     background-position: 30% 26%;
     background-repeat: no-repeat; }
+    @media (max-width: 768px) {
+      #slider .slider-img {
+        height: 50vw; } }
     #slider .slider-img:after {
       content: "";
       position: absolute;
@@ -5976,17 +5982,23 @@ nav {
 #skate-news .post {
   background: rgba(255, 255, 255, 0.9);
   padding: 28px;
-  box-shadow: 0 4px 0 rgba(255, 255, 255, 0.5); }
+  box-shadow: 0 4px 0 rgba(255, 255, 255, 0.5);
+  transition: all 200ms ease-in-out; }
   #skate-news .post:hover {
     box-shadow: 0 4px 0 white; }
   @media (max-width: 922px) {
     #skate-news .post {
       margin-top: 14px; } }
+  #skate-news .post:hover {
+    background: #fff; }
+    #skate-news .post:hover a {
+      transform: scale(1.2); }
 #skate-news a {
   color: #B12531;
   display: block;
   font-weight: bold;
-  text-align: center; }
+  text-align: center;
+  transition: all 200ms ease-in-out; }
   #skate-news a:before {
     content: "[";
     margin-right: 5px; }
@@ -5995,7 +6007,8 @@ nav {
     margin-left: 5px; }
 
 #skateboarders {
-  margin-top: 14px; }
+  margin-top: 14px;
+  position: relative; }
   #skateboarders .skater-box {
     margin-top: 10px;
     background: rgba(255, 255, 255, 0.9);
@@ -6003,11 +6016,38 @@ nav {
     box-shadow: 0 4px 0 rgba(255, 255, 255, 0.5); }
     #skateboarders .skater-box:hover {
       box-shadow: 0 4px 0 white; }
+  #skateboarders .pointer {
+    position: absolute;
+    top: 30px;
+    left: -200px;
+    background-color: #B12531;
+    color: #fff;
+    padding: 30px 10px;
+    text-transform: uppercase;
+    font-size: 16px; }
+    #skateboarders .pointer:after {
+      content: "";
+      border: 41px solid transparent;
+      border-left-color: #B12531;
+      position: absolute;
+      right: -82px;
+      top: 0; }
+    @media (max-width: 1300px) {
+      #skateboarders .pointer {
+        display: none; } }
   #skateboarders .skater-img, #skateboarders .skater-img-tall {
     height: 222px;
     background-repeat: no-repeat;
     background-position: center center;
     position: relative; }
+    @media (max-width: 450px) {
+      #skateboarders .skater-img, #skateboarders .skater-img-tall {
+        background-size: cover !important; } }
+    #skateboarders .skater-img:hover h2, #skateboarders .skater-img-tall:hover h2 {
+      font-size: 55px; }
+      @media (max-width: 1200px) {
+        #skateboarders .skater-img:hover h2, #skateboarders .skater-img-tall:hover h2 {
+          font-size: 40px; } }
   #skateboarders .skater-img-tall {
     height: 464px; }
     @media (max-width: 992px) {
@@ -6024,7 +6064,11 @@ nav {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    transition: all 200ms ease-in-out 100ms; }
+    @media (max-width: 1200px) {
+      #skateboarders h2 {
+        font-size: 35px; } }
   #skateboarders #lance {
     background-image: url("../images/sk8er-4.png");
     background-size: 120%;
@@ -6084,14 +6128,16 @@ nav {
     #products .decks:hover {
       box-shadow: 0 4px 0 white; }
   #products img {
+    display: inline-block;
     margin-right: 4.3125%; }
     #products img:last-child {
       margin-right: 0; }
-    @media (max-width: 602px) {
+    @media (max-width: 600px) {
       #products img {
-        display: block;
-        margin-right: 0;
-        transform: rotate(-0.25turn) translateY(50%); } }
+        transform: rotate(90deg) translateY(-50%);
+        width: 20%; }
+        #products img:not(:first-child) {
+          display: none; } }
 
 #contact {
   margin-top: 14px; }
@@ -6124,6 +6170,8 @@ nav {
     float: right;
     box-shadow: none;
     border: none; }
+    #contact form input[type="submit"]:hover {
+      background-color: #d53442; }
     @media (max-width: 992px) {
       #contact form input[type="submit"] {
         width: 100%; } }

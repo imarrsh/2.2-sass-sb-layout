@@ -1,18 +1,14 @@
-// overide bootstrap variables here
-// #############
-$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/" !default;
-$grid-gutter-width: 10px !default;
-
-
 // ##########################
 // IMPORTS
 // ##########################
+
+// my partials
+@import "variables";
+@import "mixins";
+
 // bootstrap stylesheets
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
-// my mixins
-@import "variables";
-@import "mixins";
 
 
 // ##########################
@@ -83,16 +79,16 @@ header {
     }
   }
   .fa-facebook {
-    background: #475795;
+    background: $facebook;
   }
   .fa-rss {
-    background: #CA903E;
+    background: $rss;
   }
   .fa-twitter {
-    background: #6D8CC4;
+    background: $twitter;
   }
   .fa-youtube {
-    background: #B03531;
+    background: $youtube;
   }
 }
 
@@ -275,13 +271,65 @@ $board-margin: ($board-width / $boards);
 }
 
 #contact {
+  margin-top: 14px;
   .contact-wrapper {
-    background-color: transparentize(#fff, 0.05);
+    background-color: #ffffff;
+    position: relative;
+  }
+  h3 {
+    margin-top: 0;
+  }
+  p {
+    margin-top: 20px;
   }
   .contact-card{
-
+    padding: 38px;
   }
-  .contact-form {
-
+  form {
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      box-shadow: inset 3px 3px 0 #B2B2B2;
+      text-transform: uppercase;
+      font-size: 14px;
+      padding: 10px;
+      border-color: #949494;
+      margin-bottom: 17px;
+    }
+    input[type="submit"] {
+      background-color: $powell-red;
+      color: #fff;
+      width: 60%;
+      float: right;
+      box-shadow: none;
+      border: none;
+    }
+  }
+  .social-links{
+    margin-top: 30px;
+    display: block;
+    float: none;
+    span {
+      margin-left: 0;
+      margin-right: 5px;
+      font-size: 15px;
+      line-height: 30px;
+      width: 30px;
+      height: 30px;
+      box-shadow: none;
+    }
+    .fa-facebook {
+      background-color: desaturate(darken($facebook, 15%), 40%);
+    }
+    .fa-rss {
+      background-color: desaturate(darken($rss, 15%), 40%);
+    }
+    .fa-twitter {
+      background-color: desaturate(darken($twitter, 15%), 40%);
+    }
+    .fa-youtube {
+      background-color: desaturate(darken($youtube, 15%), 40%);
+    }
   }
 }

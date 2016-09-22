@@ -1,10 +1,26 @@
-// #############
+// ##########################
+// BOOTSTRAP-SASS OVERRIDES
+// ##########################
+$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/" !default;
+$grid-gutter-width: 10px !default;
+
+
+// ##########################
 // COLORS
-// #############
+// ##########################
+
+// company colors
 $powell-red: #B12531;
 
+//social-links
+$facebook: #475795;
+$rss: #CA903E;
+$twitter: #6D8CC4;
+$youtube: #B03531;
 
-// #############
+
+
+// ##########################
 // FONTS
-// #############
+// ##########################
 $font-stack: 'Open Sans', 'Helvetica', sans-serif;

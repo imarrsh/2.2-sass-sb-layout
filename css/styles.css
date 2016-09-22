@@ -5996,7 +5996,53 @@ nav {
         margin-right: 0;
         transform: rotate(0.25turn); } }
 
-#contact .contact-wrapper {
-  background-color: rgba(255, 255, 255, 0.95); }
+#contact {
+  margin-top: 14px; }
+  #contact .contact-wrapper {
+    background-color: #ffffff;
+    position: relative; }
+  #contact h3 {
+    margin-top: 0; }
+  #contact p {
+    margin-top: 20px; }
+  #contact .contact-card {
+    padding: 38px; }
+  #contact form input,
+  #contact form textarea {
+    display: block;
+    width: 100%;
+    box-shadow: inset 3px 3px 0 #B2B2B2;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 10px;
+    border-color: #949494;
+    margin-bottom: 17px; }
+  #contact form input[type="submit"] {
+    background-color: #B12531;
+    color: #fff;
+    width: 60%;
+    float: right;
+    box-shadow: none;
+    border: none; }
+  #contact .social-links {
+    margin-top: 30px;
+    display: block;
+    float: none; }
+    #contact .social-links span {
+      margin-left: 0;
+      margin-right: 5px;
+      font-size: 15px;
+      line-height: 30px;
+      width: 30px;
+      height: 30px;
+      box-shadow: none; }
+    #contact .social-links .fa-facebook {
+      background-color: #484848; }
+    #contact .social-links .fa-rss {
+      background-color: #6e604e; }
+    #contact .social-links .fa-twitter {
+      background-color: #6f7175; }
+    #contact .social-links .fa-youtube {
+      background-color: #563f3e; }
 
 /*# sourceMappingURL=styles.css.map */

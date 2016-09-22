@@ -50,16 +50,44 @@ body {
 
 header {
   margin-top: 10px;
+  .mobile-nav{
+    font-size: 36px;
+    line-height: 60px;
+    color: #fff;
+    margin-left: 20px;
+    @media (max-width: 768px){
+      line-height: 60px;
+    }
+  }
+  .separator-dots {
+    display: inline-block;
+    margin-top: 5px;
+    float: left;
+    i {
+      color: #fff;
+      display: block;
+      margin: 2px 0;
+      font-size: 7px;
+    }
+  }
 }
 
 .social-links {
   float: right;
   display: inline-block;
+  @media (max-width: 768px){
+    margin-top: 10px;
+  }
   h5 {
     float: left;
+    margin-top: 20px;
+    margin-right: 20px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 100;
+    @media (max-width: 768px){
+      margin-top: 8px;
+    }
   }
   span {
     font: {
@@ -76,6 +104,12 @@ header {
     @include white-shadow;
     &:hover {
       color: rgba(255, 255, 255, 1);
+    }
+    @media (max-width: 768px) {
+      font-size: 15px;
+      line-height: 30px;
+      width: 30px;
+      height: 30px;
     }
   }
   .fa-facebook {
@@ -149,18 +183,36 @@ nav{
       top: 50px;
       left: 20px;
       z-index: 10;
+      @media (max-width: 764px) {
+        width: 40%;
+      }
     }
   }
 }
+
+.slider-controls {
+  margin-top: 20px;
+  margin-left: 0;
+  padding: 0;
+  text-align: center;
+  .slider-indicator {
+    margin-right: 10px;
+    display: inline-block;
+    background-color: $powell-red;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    @include white-shadow;
+  }
+}
+
 
 // ##########################
 // SKATE ARTICLES
 // ##########################
 
 #skate-news {
-  margin: {
-    top: 24px
-  }
   ul {
     list-style: none;
     padding-left: 0;
@@ -176,6 +228,9 @@ nav{
     background: transparentize(#fff, .1);
     padding: 28px;
     @include white-shadow;
+    @media (max-width: 922px){
+      margin-top: 14px;
+    }
   }
   a {
     color : $powell-red;
@@ -207,8 +262,6 @@ nav{
   }
 }
 
-// $default-zoom: 100%;
-
 #skateboarders {
   margin-top: 14px;
   .skater-box {
@@ -221,7 +274,6 @@ nav{
     height: 222px; // 464px for taller
     background : {
       repeat: no-repeat;
-
       position: center center;
     }
     position: relative;
@@ -229,6 +281,9 @@ nav{
   .skater-img-tall {
     @extend .skater-img;
     height: 464px;
+    @media (max-width: 992px) {
+      height: 222px;
+    }
   }
   h2 {
     color: white;
@@ -248,18 +303,30 @@ nav{
   #lance {
     background-image: url('../images/sk8er-4.png');
     @include skater-zoom(120%);
+    @media (min-width: 992px) and (max-width: 1200px) {
+      @include skater-zoom(135%);
+    }
   }
   #rodney{
     background-image: url('../images/sk8er-3.png');
     @include skater-zoom(120%);
+    @media (min-width: 992px) and (max-width: 1200px) {
+      @include skater-zoom(135%);
+    }
   }
   #steve{
     background-image: url('../images/sk8er-1.png');
     @include skater-zoom(120%);
+    @media (min-width: 992px) and (max-width: 1200px) {
+      @include skater-zoom(135%);
+    }
   }
   #tommy{
     background-image: url('../images/sk8er-2.png');
     @include skater-zoom(250%);
+    @media (min-width: 992px) and (max-width: 1200px) {
+      @include skater-zoom(280%);
+    }
     background-position: 70% center;
   }
 }
@@ -286,8 +353,9 @@ $board-margin: ($board-width / $boards);
       margin-right: 0;
     }
     @media (max-width: 602px) {
+      display: block;
       margin-right: 0;
-      transform: rotate(0.25turn);
+      transform: rotate(-0.25turn) translateY(50%);
     }
   }
 }
@@ -331,6 +399,9 @@ $board-margin: ($board-width / $boards);
       float: right;
       box-shadow: none;
       border: none;
+      @media (max-width: 992px){
+        width: 100%;
+      }
     }
   }
   .social-links{

@@ -24,8 +24,16 @@
         <div class="row">
 
           <div class="col-md-12">
+            <i class="mobile-nav fa fa-bars hidden-md hidden-lg"></i>
             <div class="social-links">
               <h5>Subscribe</h5>
+              <div class="separator-dots hidden-xs hidden-md">
+                <i class="fa fa-circle"></i>
+                <i class="fa fa-circle"></i>
+                <i class="fa fa-circle"></i>
+                <i class="fa fa-circle"></i>
+                <i class="fa fa-circle"></i>
+              </div>
               <span class="fa fa-facebook"></span>
               <span class="fa fa-rss"></span>
               <span class="fa fa-twitter"></span>
@@ -37,7 +45,7 @@
 
       </header>
 
-      <nav>
+      <nav class="hidden-xs hidden-sm">
         <div class="row">
           <div class="col-md-3">
             <a href="#skate-news">Sk8t News</a>
@@ -66,6 +74,19 @@
 
           </div>
         </div>
+
+        <div class="row">
+          <div class="col-md-12">
+
+            <ul class="slider-controls">
+              <li class="slider-indicator"></li>
+              <li class="slider-indicator"></li>
+              <li class="slider-indicator"></li>
+            </ul>
+
+          </div>
+        </div>
+
       </section>
 
       <section id="skate-news">
@@ -105,42 +126,46 @@
 
         <div class="row">
 
-          <div class="col-md-4">
+          <div class="col-md-8">
             <!-- skater container -->
-            <div class="skater-box">
-              <!-- maybe come back later and use background-clip:padding-box and less markup -->
-              <div class="skater-img" id="lance">
-                <h2>Lance Mountain</h2>
+            <div class="row">
+
+              <div class="col-md-6">
+                <div class="skater-box">
+                  <!-- maybe come back later and use background-clip:padding-box and less markup -->
+                  <div class="skater-img" id="lance">
+                    <h2>Lance Mountain</h2>
+                  </div>
+                </div>
               </div>
+
+              <div class="col-md-6">
+                <!-- skater container -->
+                <div class="skater-box">
+                  <div class="skater-img" id="rodney">
+                    <h2>Rodney Mullen</h2>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="skater-box">
+                  <div class="skater-img" id="steve">
+                    <h2>Steve Caballero</h2>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
           </div>
 
           <div class="col-md-4">
-            <!-- skater container -->
-            <div class="skater-box">
-              <div class="skater-img" id="rodney">
-                <h2>Rodney Mullen</h2>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 pull-right">
             <div class="skater-box">
               <div class="skater-img-tall" id="tommy">
                 <h2>Tommy Guerrero</h2>
               </div>
             </div>
-          </div>
-
-          <div class="col-md-8">
-
-            <div class="skater-box">
-              <div class="skater-img" id="steve">
-                <h2>Steve Caballero</h2>
-              </div>
-            </div>
-
           </div>
 
         </div> <!-- end row -->

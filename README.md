@@ -3,7 +3,7 @@
 
 This project is from mid week 2 at [The Iron Yard Greenville](https://theironyard.com). The learning goal was to utilize Bootstrap via Syntactically Awesome Style Sheets (Sass) to recreate the design mock-up given. The project pushed for pixel-perfectness and responsiveness, thus media queries were required. Sass simplifies CSS authoring by allowing for nesting, partials, mixins and variables (+ much more!). 
 
-I leveraged the partials, mixins and variables for this project to keep certain code organized and dry. I leaned on the nesting feature to keep track of the hierarchy of elements from the html and to keep the media queries close to the blocks of code where they belonged.
+I leveraged the partials, mixins and variables for this project to keep certain code organized and dry. I leaned on the nesting feature to keep track of the hierarchy of elements from the html and to keep the media queries close to the blocks of code where they belonged. I also leaned on Bootstraps grid system to handle much of the responsive work.
 
 The tooling also began to take on the form of Bower Components to install the `bootstrap-sass` dependency, which makes all of the greatness of bootstrap available in Sass flavor!
 
